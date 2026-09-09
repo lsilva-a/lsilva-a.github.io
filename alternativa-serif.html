@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luciano Silva-Aguayo</title>
+<meta name="description" content="Candidato a Doctor en Educación. Psicología experimental, ciencia de datos y reconocimiento de emociones aplicados a la formación docente.">
+<style>
+  :root{
+    --fondo:#fbfaf8; --texto:#1c1c1c; --suave:#5c5c5c; --linea:#e2ded8;
+    --acento:#1f4e6b; --tarjeta:#ffffff; --codigo:#f1efeb;
+    --ancho:52rem;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --fondo:#14161a; --texto:#e8e6e3; --suave:#a3a19d; --linea:#2b2f36;
+      --acento:#7fb4d4; --tarjeta:#1b1e23; --codigo:#22262c;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--fondo); color:var(--texto);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-size:17px; line-height:1.65;
+  }
+  .envoltorio{max-width:var(--ancho); margin:0 auto; padding:0 1.5rem}
+
+  /* Navegación */
+  nav{
+    position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--fondo) 92%, transparent);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--linea);
+  }
+  nav .envoltorio{display:flex; gap:1.4rem; align-items:center; height:3.2rem; overflow-x:auto}
+  nav a{
+    color:var(--suave); text-decoration:none; font-size:.82rem; letter-spacing:.04em;
+    text-transform:uppercase; white-space:nowrap; font-family:system-ui,-apple-system,sans-serif;
+  }
+  nav a:hover{color:var(--acento)}
+  nav a.marca{color:var(--texto); font-weight:600; margin-right:auto; text-transform:none; font-size:.95rem; letter-spacing:0}
+
+  /* Encabezado */
+  header{padding:4.5rem 0 3rem}
+  header h1{font-size:2.6rem; line-height:1.15; margin:0 0 .6rem; letter-spacing:-.015em}
+  header .rol{font-size:1.12rem; color:var(--suave); margin:0 0 1.6rem}
+  header p.entrada{font-size:1.05rem; max-width:44rem; margin:0 0 1.8rem}
+  .enlaces{display:flex; flex-wrap:wrap; gap:.55rem}
+  .enlaces a{
+    font-family:system-ui,-apple-system,sans-serif; font-size:.85rem;
+    padding:.42rem .85rem; border:1px solid var(--linea); border-radius:2rem;
+    color:var(--texto); text-decoration:none; background:var(--tarjeta); transition:.15s;
+  }
+  .enlaces a:hover{border-color:var(--acento); color:var(--acento)}
+
+  /* Secciones */
+  section{padding:2.6rem 0; border-top:1px solid var(--linea)}
+  h2{
+    font-family:system-ui,-apple-system,sans-serif; font-size:.8rem; letter-spacing:.11em;
+    text-transform:uppercase; color:var(--suave); font-weight:600; margin:0 0 1.5rem;
+  }
+  h3{font-size:1.12rem; margin:0 0 .35rem; line-height:1.3}
+  p{margin:0 0 1rem}
+  a{color:var(--acento)}
+
+  .bloque{margin-bottom:2rem}
+  .bloque:last-child{margin-bottom:0}
+  .meta{
+    font-family:system-ui,-apple-system,sans-serif; font-size:.82rem;
+    color:var(--suave); margin:0 0 .5rem;
+  }
+  .etiquetas{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.7rem}
+  .etiquetas span{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.72rem;
+    background:var(--codigo); color:var(--suave); padding:.2rem .5rem; border-radius:.25rem;
+  }
+  .destacado{
+    background:var(--tarjeta); border:1px solid var(--linea);
+    border-radius:.4rem; padding:1.3rem 1.5rem;
+  }
+  .distintivo{
+    display:inline-block; font-family:system-ui,-apple-system,sans-serif; font-size:.7rem;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--acento);
+    border:1px solid var(--acento); border-radius:.2rem; padding:.1rem .4rem;
+    vertical-align:.15em; margin-left:.4rem;
+  }
+  ul.limpia{list-style:none; padding:0; margin:0}
+  ul.limpia li{padding-left:1.1rem; position:relative; margin-bottom:.5rem}
+  ul.limpia li::before{content:"·"; position:absolute; left:.25rem; color:var(--suave)}
+
+  footer{
+    border-top:1px solid var(--linea); padding:2rem 0 3rem;
+    font-family:system-ui,-apple-system,sans-serif; font-size:.82rem; color:var(--suave);
+  }
+  footer a{color:var(--suave)}
+  @media (max-width:640px){
+    header{padding:3rem 0 2rem}
+    header h1{font-size:2rem}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="envoltorio">
+  <a href="#" class="marca">Luciano Silva-Aguayo</a>
+  <a href="#investigacion">Investigación</a>
+  <a href="#publicaciones">Publicaciones</a>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#docencia">Docencia</a>
+  <a href="#contacto">Contacto</a>
+</div></nav>
+
+<header><div class="envoltorio">
+  <h1>Luciano Silva-Aguayo</h1>
+  <p class="rol">Candidato a Doctor en Educación, Universidad de Concepción</p>
+  <p class="entrada">
+    Investigo cómo las personas reconocen emociones y cómo ese reconocimiento puede entrenarse en
+    profesores en formación. Trabajo en el cruce entre psicología experimental, neurociencia cognitiva
+    y análisis de datos: diseño experimentos, modelo los datos que producen y traduzco los resultados
+    en decisiones para la formación docente.
+  </p>
+  <div class="enlaces">
+    <a href="mailto:lsilva2017@udec.cl">lsilva2017@udec.cl</a>
+    <a href="https://orcid.org/0009-0009-4187-4218">ORCID</a>
+    <a href="https://github.com/lsilva-a">GitHub</a>
+    <a href="https://www.linkedin.com/in/lsilva-aguayo/">LinkedIn</a>
+    <a href="https://www.researchgate.net/">ResearchGate</a>
+  </div>
+</div></header>
+
+<section id="investigacion"><div class="envoltorio">
+  <h2>Investigación</h2>
+  <div class="bloque">
+    <h3>Tesis doctoral</h3>
+    <p class="meta">Universidad de Concepción · En curso, cuarto año · Beca ANID 2024-2026</p>
+    <p>
+      Entrenamiento en reconocimiento de emociones a través de microexpresiones y expresiones
+      multimodales en profesores en formación. La pregunta de fondo es si esta competencia,
+      habitualmente tratada como un rasgo, puede entrenarse de forma medible, y qué efecto tiene ese
+      entrenamiento sobre la precisión y el tiempo de reacción según el avance curricular.
+    </p>
+    <p class="meta">Director: Dr. Pedro Salcedo Lagos · Codirector: Dr. Claudio Bustos Navarrete</p>
+  </div>
+  <div class="bloque">
+    <h3>Proyecto FONDECYT EMOCREA</h3>
+    <p class="meta">Investigador colaborador · Proyecto 13220040</p>
+    <p>
+      Reconocimiento y recreación de emociones en entornos de realidad virtual mediante técnicas
+      neurocientíficas e inteligencia artificial.
+    </p>
+  </div>
+  <div class="bloque">
+    <h3>Métodos</h3>
+    <p>
+      Diseño experimental y análisis cuantitativo. Modelos lineales mixtos generalizados, logísticos y
+      log-normales, para datos de precisión y latencia; pruebas post hoc con corrección por
+      comparaciones múltiples; intervalos de confianza por bootstrap BCa. En aprendizaje automático,
+      modelos supervisados de clasificación y regresión con validación cruzada y optimización de
+      hiperparámetros.
+    </p>
+    <div class="etiquetas">
+      <span>R</span><span>Python</span><span>scikit-learn</span><span>SQL</span>
+      <span>Apache Spark</span><span>Tableau</span><span>Looker Studio</span><span>LaTeX</span>
+    </div>
+  </div>
+</div></section>
+
+<section id="publicaciones"><div class="envoltorio">
+  <h2>Publicaciones</h2>
+
+  <div class="bloque destacado">
+    <h3>Decoding Social Cues: A Scoping Review of AI-Supported Emotional Competencies and Their
+      Impact on School-Aged Populations<span class="distintivo">Q1</span></h3>
+    <p class="meta">
+      Urrutia, M., Valderrama, A., Araya, S., Silva, L., Ortiz, F., Medina, C., Salcedo, P.,
+      Guevara, P., Pino, E. J., y Marrero, H. (2026). <em>Journal of Intelligence, 14</em>(9), 191.
+    </p>
+    <p>
+      Revisión de alcance con protocolo PRISMA-ScR sobre el uso de inteligencia artificial en el
+      desarrollo de competencias emocionales en población escolar. Búsqueda en siete bases de datos y
+      análisis de 18 estudios publicados entre 2019 y 2024. El hallazgo central señala un vacío: la
+      competencia más trabajada es el reconocimiento automático mediante redes convolucionales,
+      mientras la enseñanza de habilidades humanas complejas, como la empatía, permanece sin abordar.
+    </p>
+    <p><a href="https://doi.org/10.3390/jintelligence14090191">10.3390/jintelligence14090191</a></p>
+  </div>
+
+  <div class="bloque">
+    <h3>Condiciones para el Desarrollo Profesional Docente: Retos y Oportunidades</h3>
+    <p class="meta">
+      Rojas Bravo, J., Araya Navarro, S., Sandoval Cárcamo, M., Ferrada Montecinos, P., y
+      Silva Aguayo, L. (2024). Capítulo de libro, pp. 103-137. Colección Educación.
+    </p>
+    <p><a href="https://doi.org/10.29393/L24UDEC-24BGDC20024">10.29393/L24UDEC-24BGDC20024</a></p>
+  </div>
+
+  <div class="bloque">
+    <h3>Emotional competencies in education: A scoping review of emotional recognition training</h3>
+    <p class="meta">
+      Silva Aguayo, L. E., Parra, D. M. E., Navarrete, C. E. B., y Lagos, P. A. S. (2025).
+      Protocolo registrado. OSF.
+    </p>
+    <p><a href="https://doi.org/10.17605/OSF.IO/QGYU8">10.17605/OSF.IO/QGYU8</a></p>
+  </div>
+
+  <div class="bloque">
+    <h3>Indigenous mathematical knowledge: A scoping review on its conceptualization</h3>
+    <p class="meta">
+      Estrada Parra, D., Silva Aguayo, L. E., Muñoz, E. C., Lamana, R. Z., y Martínez, A. N. (2025).
+      Protocolo registrado. INPLASY.
+    </p>
+    <p><a href="https://doi.org/10.37766/inplasy2025.11.0045">10.37766/inplasy2025.11.0045</a></p>
+  </div>
+</div></section>
+
+<section id="proyectos"><div class="envoltorio">
+  <h2>Proyectos de análisis de datos</h2>
+
+  <div class="bloque">
+    <h3>Retención y satisfacción estudiantil en educación en línea</h3>
+    <p>
+      Análisis predictivo sobre 500 estudiantes de una plataforma de formación. Recorre el ciclo
+      completo: exploración, preprocesamiento y corrección del desbalance de clases, modelos de
+      clasificación y regresión con búsqueda de hiperparámetros y validación cruzada, réplica a escala
+      con Spark MLlib e inferencia estadística. El análisis detecta y documenta una filtración de
+      información en la variable objetivo, que explica un desempeño aparentemente perfecto.
+    </p>
+    <div class="etiquetas">
+      <span>Python</span><span>pandas</span><span>scikit-learn</span><span>Spark MLlib</span><span>SciPy</span>
+    </div>
+    <p style="margin-top:.8rem">
+      <a href="https://github.com/lsilva-a/fundamentos-ciencia-de-datos">Ver repositorio</a>
+    </p>
+  </div>
+
+  <div class="bloque">
+    <h3>Análisis estadístico del reconocimiento de microexpresiones</h3>
+    <p>
+      Análisis reproducible en R para el estudio del reconocimiento emocional. Modelos lineales mixtos
+      generalizados aplicados a datos de precisión y latencia, con pruebas post hoc corregidas por
+      comparaciones múltiples e intervalos de confianza por bootstrap BCa.
+    </p>
+    <div class="etiquetas">
+      <span>R</span><span>GLMM</span><span>bootstrap BCa</span>
+    </div>
+    <p style="margin-top:.8rem">
+      <a href="https://github.com/lsilva-a/Emotion-Recognition-Task-Statistical-Analysis-Code">Ver repositorio</a>
+    </p>
+  </div>
+</div></section>
+
+<section id="docencia"><div class="envoltorio">
+  <h2>Docencia y formación</h2>
+  <div class="bloque">
+    <h3>Universidad de Concepción</h3>
+    <p class="meta">Profesor asistente · 2024</p>
+    <ul class="limpia">
+      <li>Inteligencia Artificial en Educación</li>
+      <li>Software Matemático</li>
+      <li>Introducción a la Robótica Educativa</li>
+      <li>Robótica en Educación</li>
+      <li>Laboratorio de Ondas y Óptica (2018)</li>
+    </ul>
+  </div>
+  <div class="bloque">
+    <h3>Formación</h3>
+    <p class="meta">Universidad de Concepción</p>
+    <ul class="limpia">
+      <li>Doctorado en Educación, en curso</li>
+      <li>Licenciado en Educación y Profesor de Ciencias Naturales mención Física, 2021</li>
+      <li>Google Data Analytics Professional Certificate, 2026</li>
+      <li>Applied Machine Learning in Python, University of Michigan, 2026</li>
+    </ul>
+  </div>
+  <div class="bloque">
+    <h3>Distinciones</h3>
+    <ul class="limpia">
+      <li>Premio Ciencia Impacto 2024, Universidad de Concepción, categoría Protección de Conocimiento</li>
+      <li>Premio Universidad de Concepción 2022, primer lugar de la promoción de egreso</li>
+      <li>Beca ANID de doctorado, 2024-2026</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="contacto"><div class="envoltorio">
+  <h2>Contacto</h2>
+  <p>
+    Escribo desde Concepción, Chile. Me interesan colaboraciones en investigación educativa con
+    componente experimental o de análisis de datos.
+  </p>
+  <div class="enlaces">
+    <a href="mailto:lsilva2017@udec.cl">lsilva2017@udec.cl</a>
+    <a href="https://orcid.org/0009-0009-4187-4218">ORCID</a>
+    <a href="https://github.com/lsilva-a">GitHub</a>
+    <a href="https://www.linkedin.com/in/lsilva-aguayo/">LinkedIn</a>
+    <a href="https://www.researchgate.net/">ResearchGate</a>
+  </div>
+</div></section>
+
+<footer><div class="envoltorio">
+  Luciano Silva-Aguayo · Concepción, Chile ·
+  <a href="https://orcid.org/0009-0009-4187-4218">ORCID 0009-0009-4187-4218</a>
+</div></footer>
+
+</body>
+</html>

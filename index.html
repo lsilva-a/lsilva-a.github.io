@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luciano Silva-Aguayo</title>
+<meta name="description" content="Candidato a Doctor en Educación. Psicología experimental, ciencia de datos y reconocimiento de emociones aplicados a la formación docente.">
+<style>
+  :root{
+    --lienzo:#ffffff; --alterno:#f5f5f7; --tinta:#1d1d1f; --gris:#6e6e73;
+    --linea:#d2d2d7; --azul:#0071e3; --tarjeta:#ffffff; --sombra:0 4px 24px rgba(0,0,0,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --lienzo:#000000; --alterno:#101012; --tinta:#f5f5f7; --gris:#98989d;
+      --linea:#2c2c2e; --azul:#2997ff; --tarjeta:#1c1c1e; --sombra:0 4px 24px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; -webkit-font-smoothing:antialiased}
+  body{
+    margin:0; background:var(--lienzo); color:var(--tinta);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Inter,system-ui,sans-serif;
+    font-size:18px; line-height:1.55; letter-spacing:-.01em;
+  }
+  .marco{max-width:88rem; margin:0 auto; padding:0 2rem}
+  .estrecho{max-width:52rem; margin:0 auto}
+
+  /* Idioma */
+  html[data-lang="es"] .en{display:none}
+  html[data-lang="en"] .es{display:none}
+  .idioma{
+    display:inline-flex; border:1px solid var(--linea); border-radius:2rem; overflow:hidden; flex:none;
+  }
+  .idioma button{
+    font:inherit; font-size:.78rem; padding:.25rem .7rem; border:0; cursor:pointer;
+    background:transparent; color:var(--gris);
+  }
+  .idioma button[aria-pressed="true"]{background:var(--tinta); color:var(--lienzo)}
+
+  /* Barra */
+  nav{
+    position:sticky; top:0; z-index:20; height:3.2rem;
+    background:color-mix(in srgb, var(--lienzo) 72%, transparent);
+    backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--linea);
+  }
+  nav .marco{display:flex; align-items:center; gap:2rem; height:100%; overflow-x:auto; scrollbar-width:none}
+  nav .marco::-webkit-scrollbar{display:none}
+  nav a{color:var(--tinta); opacity:.85; text-decoration:none; font-size:.78rem; white-space:nowrap; transition:opacity .2s}
+  nav a:hover{opacity:1; color:var(--azul)}
+  nav a.marca{font-weight:600; margin-right:auto; opacity:1}
+
+  /* Portada */
+  .portada{padding:8rem 0 6rem; text-align:center}
+  .portada h1{
+    font-size:clamp(2.8rem,7vw,4.6rem); font-weight:700; line-height:1.05;
+    letter-spacing:-.03em; margin:0 0 1rem;
+  }
+  .portada .subtitulo{
+    font-size:clamp(1.25rem,2.6vw,1.7rem); font-weight:500; color:var(--gris);
+    margin:0 0 2rem; letter-spacing:-.02em;
+  }
+  .portada .relato{font-size:1.18rem; line-height:1.55; color:var(--tinta); margin:0 auto 2.6rem; max-width:42rem}
+  .acciones{display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center}
+  .pastilla{
+    font-size:.92rem; padding:.6rem 1.3rem; border-radius:2rem; text-decoration:none;
+    border:1px solid var(--linea); color:var(--tinta); transition:all .2s;
+  }
+  .pastilla:hover{background:var(--tinta); color:var(--lienzo); border-color:var(--tinta)}
+  .pastilla.llena{background:var(--azul); border-color:var(--azul); color:#fff}
+  .pastilla.llena:hover{filter:brightness(1.1); background:var(--azul); color:#fff}
+
+  /* Bandas */
+  .banda{padding:6rem 0}
+  .banda.gris{background:var(--alterno)}
+  .titulo-banda{
+    font-size:clamp(2rem,4.5vw,2.9rem); font-weight:700; letter-spacing:-.025em;
+    text-align:center; margin:0 0 .8rem; line-height:1.1;
+  }
+  .bajada{text-align:center; color:var(--gris); font-size:1.1rem; margin:0 auto 3.5rem; max-width:38rem}
+
+  /* Tarjetas */
+  .rejilla{display:grid; gap:2.6rem}
+  @media (min-width:880px){ .rejilla.dos{grid-template-columns:1fr 1fr} }
+  .tarjeta{
+    background:var(--tarjeta); border-radius:1.25rem; padding:2.3rem;
+    box-shadow:var(--sombra); border:1px solid var(--linea);
+  }
+  .tarjeta h3{font-size:1.35rem; font-weight:600; letter-spacing:-.02em; margin:0 0 .5rem; line-height:1.25}
+  .tarjeta p{margin:0 0 1rem; color:var(--tinta)}
+  .tarjeta p:last-child{margin-bottom:0}
+  .sello{
+    font-size:.75rem; font-weight:600; color:var(--gris); text-transform:uppercase;
+    letter-spacing:.06em; margin:0 0 .8rem;
+  }
+  .cita{font-size:.92rem; color:var(--gris); line-height:1.5; margin:0 0 1rem}
+  .insignia{
+    display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.05em;
+    background:var(--azul); color:#fff; border-radius:1rem; padding:.16rem .6rem;
+    vertical-align:.18em; margin-left:.5rem;
+  }
+  .fichas{display:flex; flex-wrap:wrap; gap:.45rem; margin:1.1rem 0 0}
+  .fichas span{
+    font-size:.78rem; background:var(--alterno); color:var(--gris);
+    padding:.3rem .75rem; border-radius:1rem;
+  }
+  @media (prefers-color-scheme: dark){ .fichas span{background:#2c2c2e} }
+  .enlace{color:var(--azul); text-decoration:none; font-size:1.02rem}
+  .enlace:hover{text-decoration:underline}
+  .enlace::after{content:" ›"}
+
+  /* Cifras */
+  .cifras{display:grid; grid-template-columns:repeat(auto-fit,minmax(9rem,1fr)); gap:2.5rem; text-align:center}
+  .cifra strong{display:block; font-size:2.6rem; font-weight:700; letter-spacing:-.03em; line-height:1}
+  .cifra span{display:block; font-size:.92rem; color:var(--gris); margin-top:.5rem}
+
+  /* Perfiles */
+  .perfiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(16rem,1fr)); gap:1.2rem}
+  .perfil{
+    display:block; text-decoration:none; color:var(--tinta);
+    background:var(--tarjeta); border:1px solid var(--linea); border-radius:1rem;
+    padding:1.3rem 1.5rem; transition:all .2s;
+  }
+  .perfil:hover{border-color:var(--azul); transform:translateY(-2px)}
+  .perfil strong{display:block; font-size:1.05rem; font-weight:600; margin-bottom:.15rem}
+  .perfil span{font-size:.88rem; color:var(--gris)}
+
+  /* Índice de publicaciones */
+  .indice{list-style:none; padding:0; margin:0; border-top:1px solid var(--linea)}
+  .indice li{
+    display:grid; grid-template-columns:6rem 1fr; gap:1.8rem;
+    padding:1.9rem 0; border-bottom:1px solid var(--linea);
+  }
+  .indice .anio{color:var(--gris); font-size:1.05rem; font-variant-numeric:tabular-nums; padding-top:.15rem}
+  .indice .clase{
+    font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--gris); display:block; margin-bottom:.3rem;
+  }
+  .indice .obra{font-size:1.35rem; font-weight:600; letter-spacing:-.015em; line-height:1.3; margin:0 0 .35rem}
+  .indice .firma{font-size:1rem; color:var(--gris); line-height:1.45; margin:0 0 .5rem}
+  .indice .resumen{font-size:1.08rem; margin:.6rem 0 .6rem; max-width:52rem}
+  .cierre-indice{text-align:center; margin-top:2.5rem}
+
+  /* Listas */
+  .lista{list-style:none; padding:0; margin:0}
+  .lista li{padding:.85rem 0; border-bottom:1px solid var(--linea); display:flex; justify-content:space-between; gap:1.5rem}
+  .lista li:last-child{border-bottom:none}
+  .lista .dato{color:var(--gris); font-size:.9rem; text-align:right; white-space:nowrap}
+  .lista strong{font-weight:600}
+
+  footer{padding:4rem 0 5rem; text-align:center; color:var(--gris); font-size:.85rem; border-top:1px solid var(--linea)}
+  footer a{color:var(--gris)}
+  @media (max-width:640px){
+    .portada{padding:4.5rem 0 3.5rem}
+    .banda{padding:4rem 0}
+    .tarjeta{padding:1.5rem}
+    .indice li{grid-template-columns:1fr; gap:.4rem}
+    .lista li{flex-direction:column; gap:.2rem}
+    .lista .dato{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="marco">
+  <a href="#" class="marca">Luciano Silva-Aguayo</a>
+  <a href="#investigacion"><span class="es">Investigación</span><span class="en">Research</span></a>
+  <a href="#publicaciones"><span class="es">Publicaciones</span><span class="en">Publications</span></a>
+  <a href="#proyectos"><span class="es">Proyectos</span><span class="en">Projects</span></a>
+  <a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Background</span></a>
+  <a href="#sobre-mi"><span class="es">Sobre mí</span><span class="en">About me</span></a>
+  <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+  <span class="idioma">
+    <button type="button" data-idioma="es" aria-pressed="true">ES</button>
+    <button type="button" data-idioma="en" aria-pressed="false">EN</button>
+  </span>
+</div></nav>
+
+<div class="portada"><div class="marco">
+  <h1>Luciano Silva-Aguayo</h1>
+  <p class="subtitulo">
+    <span class="es">Candidato a Doctor en Educación, Universidad de Concepción</span>
+    <span class="en">PhD candidate in Education, Universidad de Concepción</span>
+  </p>
+  <p class="relato es">
+    Investigo si el reconocimiento de emociones puede entrenarse en profesores en formación, y cuánto
+    mejora cuando se entrena. Trabajo el ciclo completo del análisis: del diseño del experimento a la
+    preparación de los datos, el modelo y la interpretación de los resultados para quien debe decidir
+    con ellos.
+  </p>
+  <p class="relato en">
+    I study whether emotion recognition can be trained in preservice teachers, and how much it improves
+    when it is. I work across the full analytical cycle: from experimental design to data preparation,
+    modeling, and the interpretation of results for those who must act on them.
+  </p>
+  <div class="acciones">
+    <a class="pastilla llena" href="#publicaciones"><span class="es">Ver publicaciones</span><span class="en">See publications</span></a>
+    <a class="pastilla" href="#proyectos"><span class="es">Proyectos de datos</span><span class="en">Data projects</span></a>
+    <a class="pastilla" href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+  </div>
+</div></div>
+
+<div class="banda gris"><div class="marco">
+  <div class="cifras">
+    <div class="cifra"><strong>4</strong><span class="es">Publicaciones y protocolos</span><span class="en">Publications and protocols</span></div>
+    <div class="cifra"><strong>Q1</strong><span class="es">Artículo en Journal of Intelligence</span><span class="en">Article in Journal of Intelligence</span></div>
+    <div class="cifra"><strong>4</strong><span class="es">Años en proyecto FONDECYT</span><span class="en">Years in a FONDECYT project</span></div>
+    <div class="cifra"><strong>5</strong><span class="es">Asignaturas universitarias</span><span class="en">University courses taught</span></div>
+  </div>
+</div></div>
+
+<div class="banda" id="investigacion"><div class="marco">
+  <h2 class="titulo-banda"><span class="es">Investigación</span><span class="en">Research</span></h2>
+  <p class="bajada">
+    <span class="es">Psicología experimental, neurociencia cognitiva y análisis de datos aplicados a la formación docente.</span>
+    <span class="en">Experimental psychology, cognitive neuroscience, and data analysis applied to teacher education.</span>
+  </p>
+  <div class="rejilla dos">
+    <div class="tarjeta">
+      <p class="sello"><span class="es">Tesis doctoral</span><span class="en">Doctoral dissertation</span></p>
+      <h3><span class="es">Entrenamiento en reconocimiento de microexpresiones</span><span class="en">Training microexpression recognition</span></h3>
+      <p class="es">
+        ¿Puede entrenarse de forma medible una competencia que suele tratarse como un rasgo? La tesis
+        evalúa el efecto del entrenamiento sobre la precisión y el tiempo de reacción en profesores en
+        formación, según su avance curricular.
+      </p>
+      <p class="en">
+        Can a competence usually treated as a trait be trained in measurable ways? The dissertation
+        evaluates the effect of training on accuracy and reaction time in preservice teachers, according
+        to their progress through the curriculum.
+      </p>
+      <p class="cita es">Universidad de Concepción · Beca ANID 2024-2026<br>Director: Dr. Pedro Salcedo Lagos · Codirector: Dr. Claudio Bustos Navarrete</p>
+      <p class="cita en">Universidad de Concepción · ANID doctoral scholarship 2024-2026<br>Advisor: Dr. Pedro Salcedo Lagos · Co-advisor: Dr. Claudio Bustos Navarrete</p>
+    </div>
+    <div class="tarjeta">
+      <p class="sello">FONDECYT 13220040</p>
+      <h3><span class="es">EMOCREA: emociones en realidad virtual</span><span class="en">EMOCREA: emotions in virtual reality</span></h3>
+      <p class="es">
+        Reconocimiento y recreación de emociones en entornos de realidad virtual mediante técnicas
+        neurocientíficas e inteligencia artificial. Participo como investigador colaborador en el
+        diseño experimental y el análisis de los datos.
+      </p>
+      <p class="en">
+        Recognition and re-creation of emotions in virtual reality environments through neuroscientific
+        techniques and artificial intelligence. I contribute as a collaborating researcher in
+        experimental design and data analysis.
+      </p>
+    </div>
+  </div>
+  <div class="tarjeta" style="margin-top:2.6rem">
+    <p class="sello"><span class="es">Métodos y herramientas</span><span class="en">Methods and tools</span></p>
+    <h3><span class="es">Del experimento al modelo</span><span class="en">From experiment to model</span></h3>
+    <p class="es">
+      Preparación y limpieza de datos, análisis exploratorio y visualización. En inferencia, modelos
+      lineales mixtos generalizados, logísticos y log-normales, con pruebas post hoc corregidas por
+      comparaciones múltiples e intervalos de confianza por bootstrap BCa. En aprendizaje automático,
+      modelos supervisados de clasificación y regresión con validación cruzada, optimización de
+      hiperparámetros y evaluación de desempeño. Consulta en SQL, procesamiento a escala con Spark y
+      tableros en Tableau y Looker Studio.
+    </p>
+    <p class="en">
+      Data preparation and cleaning, exploratory analysis, and visualization. For inference, generalized
+      linear mixed models, both logistic and log-normal, with post hoc tests corrected for multiple
+      comparisons and BCa bootstrap confidence intervals. For machine learning, supervised classification
+      and regression models with cross-validation, hyperparameter tuning, and performance evaluation.
+      SQL querying, large-scale processing with Spark, and dashboards in Tableau and Looker Studio.
+    </p>
+    <div class="fichas">
+      <span>R</span><span>Python</span><span>scikit-learn</span><span>SQL</span>
+      <span>Apache Spark</span><span>Tableau</span><span>Looker Studio</span><span>LaTeX</span>
+    </div>
+  </div>
+</div></div>
+
+<div class="banda gris" id="publicaciones"><div class="marco">
+  <h2 class="titulo-banda"><span class="es">Publicaciones</span><span class="en">Publications</span></h2>
+  <p class="bajada">
+    <span class="es">Producción indexada y protocolos de investigación registrados.</span>
+    <span class="en">Indexed output and registered research protocols.</span>
+  </p>
+
+  <ul class="indice">
+    <li>
+      <span class="anio">2026</span>
+      <div>
+        <span class="clase"><span class="es">Artículo en revista</span><span class="en">Journal article</span><span class="insignia">Q1</span></span>
+        <p class="obra">Decoding Social Cues: A Scoping Review of AI-Supported Emotional Competencies and Their Impact on School-Aged Populations</p>
+        <p class="firma">Urrutia, M., Valderrama, A., Araya, S., Silva, L., Ortiz, F., Medina, C., Salcedo, P., Guevara, P., Pino, E. J., &amp; Marrero, H. · Journal of Intelligence, 14(9), 191.</p>
+        <p class="resumen es">Revisión de alcance con protocolo PRISMA-ScR sobre inteligencia artificial aplicada al desarrollo de competencias emocionales en población escolar: siete bases de datos y 18 estudios entre 2019 y 2024.</p>
+        <p class="resumen en">A PRISMA-ScR scoping review of artificial intelligence applied to emotional competence development in school-aged populations: seven databases and 18 studies published between 2019 and 2024.</p>
+        <a class="enlace" href="https://doi.org/10.3390/jintelligence14090191"><span class="es">Leer el artículo</span><span class="en">Read the article</span></a>
+      </div>
+    </li>
+    <li>
+      <span class="anio">2025</span>
+      <div>
+        <span class="clase"><span class="es">Protocolo registrado</span><span class="en">Registered protocol</span></span>
+        <p class="obra">Emotional competencies in education: A scoping review of emotional recognition training</p>
+        <p class="firma">Silva Aguayo, L. E., Parra, D. M. E., Navarrete, C. E. B., &amp; Lagos, P. A. S. · OSF.</p>
+        <a class="enlace" href="https://doi.org/10.17605/OSF.IO/QGYU8"><span class="es">Ver protocolo</span><span class="en">View protocol</span></a>
+      </div>
+    </li>
+    <li>
+      <span class="anio">2025</span>
+      <div>
+        <span class="clase"><span class="es">Protocolo registrado</span><span class="en">Registered protocol</span></span>
+        <p class="obra">Indigenous mathematical knowledge: A scoping review on its conceptualization</p>
+        <p class="firma">Estrada Parra, D., Silva Aguayo, L. E., Muñoz, E. C., Lamana, R. Z., &amp; Martínez, A. N. · INPLASY.</p>
+        <a class="enlace" href="https://doi.org/10.37766/inplasy2025.11.0045"><span class="es">Ver protocolo</span><span class="en">View protocol</span></a>
+      </div>
+    </li>
+    <li>
+      <span class="anio">2024</span>
+      <div>
+        <span class="clase"><span class="es">Capítulo de libro</span><span class="en">Book chapter</span></span>
+        <p class="obra">Condiciones para el Desarrollo Profesional Docente: Retos y Oportunidades</p>
+        <p class="firma">Rojas Bravo, J., Araya Navarro, S., Sandoval Cárcamo, M., Ferrada Montecinos, P., &amp; Silva Aguayo, L. · Colección Educación, pp. 103-137.</p>
+        <a class="enlace" href="https://doi.org/10.29393/L24UDEC-24BGDC20024"><span class="es">Ver publicación</span><span class="en">View publication</span></a>
+      </div>
+    </li>
+  </ul>
+
+  <p class="cierre-indice"><a class="enlace" href="https://orcid.org/0009-0009-4187-4218"><span class="es">Producción completa en ORCID</span><span class="en">Full record on ORCID</span></a></p>
+</div></div>
+
+<div class="banda" id="proyectos"><div class="marco">
+  <h2 class="titulo-banda"><span class="es">Proyectos de datos</span><span class="en">Data projects</span></h2>
+  <p class="bajada">
+    <span class="es">Análisis reproducibles, con el código disponible y los supuestos a la vista.</span>
+    <span class="en">Reproducible analyses, with the code available and the assumptions in plain sight.</span>
+  </p>
+  <div class="rejilla dos">
+    <div class="tarjeta">
+      <p class="sello">Python</p>
+      <h3><span class="es">Retención y satisfacción estudiantil</span><span class="en">Student retention and satisfaction</span></h3>
+      <p class="es">
+        Análisis predictivo sobre 500 estudiantes de una plataforma de educación en línea. Exploración,
+        corrección del desbalance de clases, modelos de clasificación y regresión con validación
+        cruzada, réplica a escala con Spark MLlib e inferencia estadística. El análisis detecta y
+        documenta una filtración de información en la variable objetivo que explicaba un desempeño
+        aparentemente perfecto.
+      </p>
+      <p class="en">
+        Predictive analysis of 500 students from an online education platform. Exploration, class
+        imbalance correction, classification and regression models with cross-validation, replication at
+        scale with Spark MLlib, and statistical inference. The analysis detects and documents a data
+        leak in the target variable that accounted for a seemingly perfect performance.
+      </p>
+      <div class="fichas">
+        <span>pandas</span><span>scikit-learn</span><span>Spark MLlib</span><span>SciPy</span>
+      </div>
+      <p style="margin-top:1.1rem"><a class="enlace" href="https://github.com/lsilva-a/fundamentos-ciencia-de-datos"><span class="es">Ver repositorio</span><span class="en">View repository</span></a></p>
+    </div>
+    <div class="tarjeta">
+      <p class="sello">R</p>
+      <h3><span class="es">Reconocimiento de microexpresiones</span><span class="en">Microexpression recognition</span></h3>
+      <p class="es">
+        Análisis reproducible del reconocimiento emocional. Modelos lineales mixtos generalizados sobre
+        datos de precisión y latencia, con pruebas post hoc corregidas por comparaciones múltiples e
+        intervalos de confianza por bootstrap BCa.
+      </p>
+      <p class="en">
+        Reproducible analysis of emotion recognition. Generalized linear mixed models on accuracy and
+        latency data, with post hoc tests corrected for multiple comparisons and BCa bootstrap
+        confidence intervals.
+      </p>
+      <div class="fichas">
+        <span>GLMM</span><span>bootstrap BCa</span><span>post hoc</span>
+      </div>
+      <p style="margin-top:1.1rem"><a class="enlace" href="https://github.com/lsilva-a/Emotion-Recognition-Task-Statistical-Analysis-Code"><span class="es">Ver repositorio</span><span class="en">View repository</span></a></p>
+    </div>
+  </div>
+</div></div>
+
+<div class="banda gris" id="trayectoria"><div class="marco">
+  <h2 class="titulo-banda"><span class="es">Trayectoria</span><span class="en">Background</span></h2>
+  <p class="bajada">
+    <span class="es">Experiencia, docencia universitaria, formación y distinciones.</span>
+    <span class="en">Experience, university teaching, education, and distinctions.</span>
+  </p>
+
+  <div class="tarjeta" style="margin-bottom:2.6rem">
+    <p class="sello"><span class="es">Experiencia</span><span class="en">Experience</span></p>
+    <ul class="lista es">
+      <li><span><strong>Investigador colaborador</strong> · Proyecto FONDECYT 13220040 (EMOCREA), Universidad de Concepción. Diseño experimental, preparación de datos y análisis estadístico en R.</span><span class="dato">2024-2025</span></li>
+      <li><span><strong>Profesor universitario asistente</strong> · Universidad de Concepción. Docencia en tecnología educativa, robótica e inteligencia artificial aplicada a la educación.</span><span class="dato">2024</span></li>
+      <li><span><strong>Profesor de Física</strong> · Colegio San Cristóbal, Talcahuano.</span><span class="dato">2022</span></li>
+      <li><span><strong>Profesor de laboratorio</strong> · Ondas y Óptica, Universidad de Concepción.</span><span class="dato">2018</span></li>
+    </ul>
+    <ul class="lista en">
+      <li><span><strong>Collaborating researcher</strong> · FONDECYT project 13220040 (EMOCREA), Universidad de Concepción. Experimental design, data preparation, and statistical analysis in R.</span><span class="dato">2024-2025</span></li>
+      <li><span><strong>Assistant lecturer</strong> · Universidad de Concepción. Teaching in educational technology, robotics, and artificial intelligence applied to education.</span><span class="dato">2024</span></li>
+      <li><span><strong>Physics teacher</strong> · Colegio San Cristóbal, Talcahuano.</span><span class="dato">2022</span></li>
+      <li><span><strong>Laboratory instructor</strong> · Waves and Optics, Universidad de Concepción.</span><span class="dato">2018</span></li>
+    </ul>
+  </div>
+
+  <div class="rejilla dos">
+    <div class="tarjeta">
+      <p class="sello"><span class="es">Docencia</span><span class="en">Teaching</span></p>
+      <ul class="lista es">
+        <li><span>Inteligencia Artificial en Educación</span><span class="dato">UdeC · 2024</span></li>
+        <li><span>Software Matemático</span><span class="dato">UdeC · 2024</span></li>
+        <li><span>Introducción a la Robótica Educativa</span><span class="dato">UdeC · 2024</span></li>
+        <li><span>Robótica en Educación</span><span class="dato">UdeC · 2024</span></li>
+        <li><span>Laboratorio de Ondas y Óptica</span><span class="dato">UdeC · 2018</span></li>
+      </ul>
+      <ul class="lista en">
+        <li><span>Artificial Intelligence in Education</span><span class="dato">UdeC · 2024</span></li>
+        <li><span>Mathematical Software</span><span class="dato">UdeC · 2024</span></li>
+        <li><span>Introduction to Educational Robotics</span><span class="dato">UdeC · 2024</span></li>
+        <li><span>Robotics in Education</span><span class="dato">UdeC · 2024</span></li>
+        <li><span>Waves and Optics Laboratory</span><span class="dato">UdeC · 2018</span></li>
+      </ul>
+    </div>
+    <div class="tarjeta">
+      <p class="sello"><span class="es">Formación</span><span class="en">Education</span></p>
+      <ul class="lista es">
+        <li><span>Doctorado en Educación</span><span class="dato">UdeC · en curso</span></li>
+        <li><span>Applied Machine Learning in Python</span><span class="dato">Michigan · 2026</span></li>
+        <li><span>Google Data Analytics Professional Certificate</span><span class="dato">Google · 2026</span></li>
+        <li><span>Licenciado en Educación y Profesor de Ciencias Naturales mención Física</span><span class="dato">UdeC · 2021</span></li>
+      </ul>
+      <ul class="lista en">
+        <li><span>PhD in Education</span><span class="dato">UdeC · in progress</span></li>
+        <li><span>Applied Machine Learning in Python</span><span class="dato">Michigan · 2026</span></li>
+        <li><span>Google Data Analytics Professional Certificate</span><span class="dato">Google · 2026</span></li>
+        <li><span>BA in Education and Teacher of Natural Sciences and Physics</span><span class="dato">UdeC · 2021</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tarjeta" style="margin-top:2.6rem">
+    <p class="sello"><span class="es">Distinciones</span><span class="en">Distinctions</span></p>
+    <ul class="lista es">
+      <li><span>Beca ANID de doctorado</span><span class="dato">2024-2026</span></li>
+      <li><span>Premio Ciencia Impacto, categoría Protección de Conocimiento</span><span class="dato">UdeC · 2024</span></li>
+      <li><span>Premio Universidad de Concepción</span><span class="dato">UdeC · 2022</span></li>
+    </ul>
+    <ul class="lista en">
+      <li><span>ANID doctoral scholarship</span><span class="dato">2024-2026</span></li>
+      <li><span>Ciencia Impacto Award, Knowledge Protection category</span><span class="dato">UdeC · 2024</span></li>
+      <li><span>Universidad de Concepción Award</span><span class="dato">UdeC · 2022</span></li>
+    </ul>
+  </div>
+</div></div>
+
+<div class="banda" id="sobre-mi"><div class="marco estrecho">
+  <h2 class="titulo-banda"><span class="es">Sobre mí</span><span class="en">About me</span></h2>
+  <div class="tarjeta" style="margin-top:2rem">
+    <p class="es">
+      Llegué a los datos por el camino largo. Estudié Física y me formé como profesor, y fue enseñando
+      cuando me topé con la pregunta que todavía me ocupa: por qué dos personas frente a la misma clase
+      leen cosas distintas en la cara de un estudiante. Buscar una respuesta seria a eso me llevó al
+      diseño experimental, y de ahí al análisis de datos, que es donde la pregunta se vuelve medible.
+    </p>
+    <p class="es">
+      Del aula me quedó una costumbre que sigo usando: si no puedo explicar un resultado a alguien que
+      no conoce el método, probablemente todavía no lo entiendo del todo. Por eso trabajo con código
+      abierto y análisis reproducibles, y por eso me interesa tanto lo que un modelo no explica como lo
+      que explica.
+    </p>
+    <p class="en">
+      I came to data the long way around. I studied Physics and trained as a teacher, and it was while
+      teaching that I ran into the question that still occupies me: why two people facing the same class
+      read different things in a student's face. Looking for a serious answer led me to experimental
+      design, and from there to data analysis, where the question becomes measurable.
+    </p>
+    <p class="en">
+      From the classroom I kept a habit I still rely on: if I cannot explain a result to someone
+      unfamiliar with the method, I probably do not fully understand it yet. That is why I work with
+      open code and reproducible analyses, and why what a model fails to explain interests me as much
+      as what it does.
+    </p>
+  </div>
+</div></div>
+
+<div class="banda gris" id="contacto"><div class="marco">
+  <h2 class="titulo-banda"><span class="es">Hablemos</span><span class="en">Get in touch</span></h2>
+  <p class="bajada">
+    <span class="es">Escribo desde Concepción, Chile. Me interesan colaboraciones en investigación educativa con componente experimental o de análisis de datos.</span>
+    <span class="en">I write from Concepción, Chile. I am interested in collaborations in educational research with an experimental or data analysis component.</span>
+  </p>
+
+  <div class="perfiles">
+    <a class="perfil" href="mailto:lsilva2017@udec.cl">
+      <strong><span class="es">Correo</span><span class="en">Email</span></strong>
+      <span>lsilva2017@udec.cl</span>
+    </a>
+    <a class="perfil" href="https://orcid.org/0009-0009-4187-4218">
+      <strong>ORCID</strong>
+      <span>0009-0009-4187-4218</span>
+    </a>
+    <a class="perfil" href="https://scholar.google.com/citations?user=V5Cuyk8AAAAJ">
+      <strong>Google Scholar</strong>
+      <span class="es">Citas e índices</span><span class="en">Citations and indices</span>
+    </a>
+    <a class="perfil" href="https://www.researchgate.net/profile/Luciano-Silva-Aguayo-2">
+      <strong>ResearchGate</strong>
+      <span class="es">Producción y preprints</span><span class="en">Output and preprints</span>
+    </a>
+    <a class="perfil" href="https://github.com/lsilva-a">
+      <strong>GitHub</strong>
+      <span class="es">Código y análisis reproducibles</span><span class="en">Code and reproducible analyses</span>
+    </a>
+    <a class="perfil" href="https://www.linkedin.com/in/lsilva-aguayo/">
+      <strong>LinkedIn</strong>
+      <span class="es">Trayectoria profesional</span><span class="en">Professional background</span>
+    </a>
+    <a class="perfil" href="https://doi.org/10.17605/OSF.IO/QGYU8">
+      <strong>OSF</strong>
+      <span class="es">Protocolos preregistrados</span><span class="en">Preregistered protocols</span>
+    </a>
+  </div>
+</div></div>
+
+<footer><div class="marco">
+  Luciano Silva-Aguayo · Concepción, Chile ·
+  <a href="https://orcid.org/0009-0009-4187-4218">ORCID 0009-0009-4187-4218</a>
+</div></footer>
+
+<script>
+  (function(){
+    var raiz = document.documentElement;
+    var botones = document.querySelectorAll('.idioma button');
+
+    function aplicar(idioma){
+      raiz.dataset.lang = idioma;
+      raiz.lang = idioma;
+      botones.forEach(function(b){
+        b.setAttribute('aria-pressed', b.dataset.idioma === idioma ? 'true' : 'false');
+      });
+      try { localStorage.setItem('idioma', idioma); } catch (e) {}
+    }
+
+    var guardado = null;
+    try { guardado = localStorage.getItem('idioma'); } catch (e) {}
+    var inicial = guardado || ((navigator.language || 'es').slice(0,2) === 'es' ? 'es' : 'en');
+    aplicar(inicial);
+
+    botones.forEach(function(b){
+      b.addEventListener('click', function(){ aplicar(b.dataset.idioma); });
+    });
+  })();
+</script>
+
+</body>
+</html>
